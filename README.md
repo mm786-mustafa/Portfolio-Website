@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Muhammad Mustafa — Portfolio
+
+A modern, fully-featured portfolio showcasing expertise in DevOps engineering, full stack web development, and mobile app development. Built with Next.js, Tailwind CSS, and Framer Motion for smooth, interactive experiences.
+
+## Highlights
+
+- Dark-first theme with optional light mode
+- Glassmorphism, neon accents, and animated gradient borders
+- Particle hero background, cursor glow, and scroll-triggered motion
+- DevOps showcase with infrastructure diagrams, deployment pipelines, and terminal animations
+- Fully responsive, SEO friendly, and accessibility aware
+- Interactive sections for projects, skills, experience, and services
+- Real-time GitHub stats integration
+- Smooth scroll animations and micro-interactions
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 to view your portfolio.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customize Your Content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All portfolio content is centralized in `src/data/site.ts` for easy updates:
 
-## Learn More
+- **Hero section**: name, title, tagline, and CTAs
+- **Projects**: featured work samples with tech stacks
+- **Skills**: organized by category (DevOps, Web, Mobile)
+- **Services**: list of offerings
+- **Timeline**: experience and milestones
+- **Testimonials**: client feedback
+- **Social links**: GitHub, LinkedIn, email, WhatsApp, and more
 
-To learn more about Next.js, take a look at the following resources:
+Update the file and changes reflect immediately.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Next Steps
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Replace placeholder data in `src/data/site.ts` with your real info
+2. Add your resume to `public/resume.pdf`
+3. Upload project previews and replace placeholder images
+4. Update social media links and contact details
+5. Customize taglines and descriptions to match your voice
 
-## Deploy on Vercel
+## Build & Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run build
+npm run start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy to Vercel, Netlify, or your preferred hosting platform.
