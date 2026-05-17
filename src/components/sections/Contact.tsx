@@ -76,7 +76,7 @@ export function Contact() {
                 ))}
               </div>
             </motion.div>
-            <GitHubStats username="your-handle" />
+            <GitHubStats username="mm786-mustafa" />
           </div>
         </div>
       </div>
