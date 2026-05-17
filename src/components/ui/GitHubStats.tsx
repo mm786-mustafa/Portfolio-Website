@@ -61,9 +61,6 @@ export function GitHubStats({ username }: { username: string }) {
           <p className="text-[color:var(--muted)]">Following</p>
         </div>
       </div>
-      <p className="mt-3 text-xs text-[color:var(--muted)]">
-        Replace {username} with your GitHub handle.
-      </p>
     </div>
   );
 }

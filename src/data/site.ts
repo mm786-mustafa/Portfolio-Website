@@ -157,7 +157,7 @@ export const testimonials = [
     name: "Jordan Blake",
     role: "CTO, Heliograph Labs",
     quote:
-      "Avery delivered a production-grade platform in record time. The infrastructure was clean, secure, and easy for our team to extend.",
+      "Mustafa delivered a production-grade platform in record time. The infrastructure was clean, secure, and easy for our team to extend.",
   },
   {
     name: "Samira Oseni",

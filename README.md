@@ -22,6 +22,34 @@ npm run dev
 
 Open http://localhost:3000 to view your portfolio.
 
+## Contact Form Email Setup
+
+The contact form submits without refreshing the page and sends an email through your SMTP provider. Set these environment variables before running the app in production:
+
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_USER`
+- `SMTP_PASS`
+- `CONTACT_TO_EMAIL`
+- `CONTACT_FROM_EMAIL` optional, defaults to `SMTP_USER`
+
+If these values are missing, the form will show an error instead of silently dropping the submission.
+
+Gmail (quick local setup)
+1. Make sure your Google account has 2-Step Verification enabled.
+2. Open https://myaccount.google.com/security and create an App Password (choose Mail or Other and name it "Portfolio contact").
+3. Copy the generated 16-character password and create a file named `.env.local` at the project root with this content:
+
+```env
+SMTP_PASS=your_generated_app_password_here
+```
+
+4. Restart the dev server: `npm run dev`.
+
+Notes
+- For production, set the same `SMTP_PASS` and (optionally) `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` in your hosting provider's environment settings.
+- If you prefer not to use Gmail, set `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, and `SMTP_PASS` in `.env.local`.
+
 ## Customize Your Content
 
 All portfolio content is centralized in `src/data/site.ts` for easy updates:
