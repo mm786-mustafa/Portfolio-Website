@@ -24,7 +24,7 @@ Open http://localhost:3000 to view your portfolio.
 
 ## Contact Form Email Setup
 
-The contact form submits without refreshing the page and sends an email through your SMTP provider. Set these environment variables before running the app in production:
+The contact form submits without refreshing the page and sends an email through your SMTP provider. Set these environment variables before running the app in production and in local development:
 
 - `SMTP_HOST`
 - `SMTP_PORT`
@@ -41,14 +41,18 @@ Gmail (quick local setup)
 3. Copy the generated 16-character password and create a file named `.env.local` at the project root with this content:
 
 ```env
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_USER=your_gmail_address@gmail.com
 SMTP_PASS=your_generated_app_password_here
+CONTACT_TO_EMAIL=mmshah953@gmail.com
 ```
 
 4. Restart the dev server: `npm run dev`.
 
 Notes
-- For production, set the same `SMTP_PASS` and (optionally) `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` in your hosting provider's environment settings.
-- If you prefer not to use Gmail, set `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, and `SMTP_PASS` in `.env.local`.
+- For production, set the same values in your hosting provider's environment settings.
+- If you prefer not to use Gmail, set the matching SMTP provider values in `.env.local`.
 
 ## Customize Your Content
 

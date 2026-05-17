@@ -3,10 +3,6 @@ import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 
-const DEFAULT_CONTACT_EMAIL = "mmshah953@gmail.com";
-const DEFAULT_SMTP_HOST = "smtp.gmail.com";
-const DEFAULT_SMTP_PORT = "465";
-
 type ContactPayload = {
   name?: string;
   email?: string;
@@ -24,12 +20,12 @@ function escapeHtml(value: string) {
 }
 
 function createTransport() {
-  const host = process.env.SMTP_HOST ?? DEFAULT_SMTP_HOST;
-  const port = process.env.SMTP_PORT ?? DEFAULT_SMTP_PORT;
-  const user = process.env.SMTP_USER ?? DEFAULT_CONTACT_EMAIL;
+  const host = process.env.SMTP_HOST;
+  const port = process.env.SMTP_PORT;
+  const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
 
-  if (!pass) {
+  if (!host || !port || !user || !pass) {
     return null;
   }
 
@@ -59,14 +55,14 @@ export async function POST(request: Request) {
     );
   }
 
-  const recipient = process.env.CONTACT_TO_EMAIL ?? DEFAULT_CONTACT_EMAIL;
-  const sender = process.env.CONTACT_FROM_EMAIL ?? process.env.SMTP_USER ?? DEFAULT_CONTACT_EMAIL;
+  const recipient = process.env.CONTACT_TO_EMAIL;
+  const sender = process.env.CONTACT_FROM_EMAIL ?? process.env.SMTP_USER;
 
   if (!recipient || !sender) {
     return NextResponse.json(
       {
         message:
-          "Email delivery is not configured. Set SMTP_PASS to your Gmail app password.",
+          "Email delivery is not configured. Set SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, and CONTACT_TO_EMAIL.",
       },
       { status: 500 }
     );
@@ -78,7 +74,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         message:
-          "Email delivery is not configured. Set SMTP_PASS to your Gmail app password.",
+          "Email delivery is not configured. Set SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, and CONTACT_TO_EMAIL.",
       },
       { status: 500 }
     );
