@@ -1,21 +1,27 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const jetBrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "Muhammad Mustafa | DevOps, Web, and Mobile Engineer",
   description:
-    "Premium portfolio showcasing DevOps automation, full stack development, and mobile engineering.",
+    "Portfolio showcasing DevOps automation, full stack development, and mobile engineering.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.ico?v=2", sizes: "256x256", type: "image/x-icon" },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -26,12 +32,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-theme="dark"
-      className={`${spaceGrotesk.variable} ${jetBrainsMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[color:var(--bg)] text-[color:var(--text)]">
-        {children}
-      </body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }
