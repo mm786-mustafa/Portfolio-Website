@@ -108,6 +108,11 @@ export function Hero() {
             <a
               key={cta.label}
               href={cta.href}
+              download={
+                cta.label === "Download Resume"
+                  ? "Muhammad-Mustafa-Resume.pdf"
+                  : undefined
+              }
               className={`rounded-full px-6 py-3 text-sm font-semibold transition ${
                 index === 0
                   ? "bg-[color:var(--accent)] text-black hover:brightness-110"

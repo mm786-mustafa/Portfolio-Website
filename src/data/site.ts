@@ -7,7 +7,7 @@ export const hero = {
   ctas: [
     { label: "Hire Me", href: "#contact" },
     { label: "View Projects", href: "#projects" },
-    { label: "Download Resume", href: "/resume.pdf" },
+    { label: "Download Resume", href: "/resume" },
   ],
 };
 
